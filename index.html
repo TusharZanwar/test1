@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Add Map</title>
+    <style>
+      #map {
+        height: 400px;
+        width: 100%;
+      }
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>My Google Maps Demo</h3>
+    <!-- The div element for the map -->
+    <div id="map"></div>
+
+    <!-- Load Google Maps JavaScript API with the callback function -->
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDfOWObUiCyEAWeaqeyRnf_5pIrX1HI1a8&callback=initMap"
+      async
+      defer
+    ></script>
+
+    <script>
+      // Initialize and add the map
+      function initMap() {
+        // The location of the place you want to center the map
+        var location = { lat: 21.1225103, lng: 79.0525309 };
+
+        // Create the map, centered at the specified location
+        var map = new google.maps.Map(document.getElementById("map"), {
+          zoom: 4,
+          center: location,
+        });
+
+        // Optional: Add a marker at the location
+        var marker = new google.maps.Marker({
+          position: location,
+          map: map,
+        });
+      }
+    </script>
+  </body>
+</html>
